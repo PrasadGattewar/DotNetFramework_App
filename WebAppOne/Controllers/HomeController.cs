@@ -8,6 +8,7 @@ namespace WebAppOne.Controllers
 {
     public class HomeController : Controller
     {
+        // Commenting for testing the flow
         public ActionResult Index()
         {
             return View();
