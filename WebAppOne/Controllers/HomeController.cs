@@ -12,6 +12,7 @@ namespace WebAppOne.Controllers
         // New comment for testing
         // adding one more comment
         // Test 23
+        // From server
         public ActionResult Index()
         {
             return View();
