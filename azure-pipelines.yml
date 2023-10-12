@@ -36,6 +36,22 @@ steps:
     
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: ''
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+
+- task: OctopusPackZip@6
+  inputs:
+    PackageId: 'WebAppOne'
+    PackageVersion: '$(Build. BuildId)'
+    SourcePath: '$(Build.ArtifactStagingDirectory)'
+    OutputPath: '$(Build.ArtifactStagingDirectory)/drop1'
+
+
+- task: OctopusPush@6
+  inputs:
+    OctoConnectedServiceName: 'Octopus'
+    Space: 'Default'
+    Packages: '$(Build.ArtifactStagingDirectory)/drop1/*.zip'
+    Replace: 'true'
