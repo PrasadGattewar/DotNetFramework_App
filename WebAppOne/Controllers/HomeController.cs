@@ -8,13 +8,6 @@ namespace WebAppOne.Controllers
 {
     public class HomeController : Controller
     {
-        // comment
-        // Commenting for testing the flow
-        // New comment for testing
-        // adding one more comment
-        // Test 23
-        // From server
-        // Commet for jenkins pipeline
         public ActionResult Index()
         {
             return View();
